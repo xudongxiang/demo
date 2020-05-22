@@ -74,20 +74,24 @@
     <header class="header" id="top">
       <div class="jumbotron jumbotroncolor text-center">
 	<div class="container">
-	  <h1>Non-parallel Many-to-many Voice Conversion with PSR-StarGAN</h1>
+	  <h2><p style="text-align:center">Non-parallel Many-to-many Voice Conversion with PSR-StarGAN</p></h2>
+	  
 	  <p class="lead">
-	    <a>YanpingLi</a>&nbsp;&nbsp;&nbsp;
-	    <a>DongxiangXu</a>&nbsp;&nbsp;&nbsp;
-		<a>YanZhang</a>&nbsp;&nbsp;&nbsp;
-		<a>YangWang</a>&nbsp;&nbsp;&nbsp;
-		<a>BinbinChen</a>&nbsp;&nbsp;&nbsp;
-	    <br>
-		NJUPT<br>
-		JIT<br>
-		vivo
+		<p style="text-align:center">
+	    <a>Yanping Li</a>&nbsp;&nbsp;&nbsp;
+	    <a>Dongxiang Xu</a>&nbsp;&nbsp;&nbsp;
+		<a>Yan Zhang</a>&nbsp;&nbsp;&nbsp;
+		<a>Yang Wang</a>&nbsp;&nbsp;&nbsp;
+		<a>Binbin Chen</a>&nbsp;&nbsp;&nbsp;
+		</p>
+		<p style="text-align:center">
+		Nanjing University of Posts and Telecommunications<br>
+		Jinling Institute of Technology<br>
+		vivo AI Lab
+		</p>
 	  </p>
 	  <p class="lead">
-	    Interspeech 2020<br>
+	    <p style="text-align:center">Interspeech 2020</p><br>
 	    <!-- <a href="https://arxiv.org/abs/1907.12279">arXiv:1907.12279</a>, July 2019-->
 	  </p>
 	</div>
@@ -96,36 +100,6 @@
 
     <main>            
       <div class="container">
-	<!--
-	<div class="row" id="paper">
-	  <div class="col-md-12">
-	    <h2>Paper</h2>
-	    <div class="row align-items-center">
-	      <div class="thumbnailsize" align="center">
-		<a href="https://arxiv.org/pdf/1907.12279.pdf"><img class="thumbnailshadow" src="images/paper_thumbnail.png" width=150></a>
-	      </div>
-	      <div class="col-md-9">
-		<p>
-		  Takuhiro Kaneko, Hirokazu Kameoka, Kou Tanaka, and Nobukatsu Hojo<br>
-		  <strong>StarGAN-VC2: Rethinking Conditional Methods for StarGAN-Based Voice Conversion</strong><br>
-		  <em>Interspeech 2019</em><br>
-		  [<a href="https://arxiv.org/abs/1907.12279">Paper</a>]
-		  [<a href="resources/Kaneko_StarGAN-VC2_Interspeech_2019_poster.pdf">Poster</a>]
-		  [<a href="resources/StarGAN-VC2.txt">BibTeX</a>]
-		</p>
-		<p>
-		  <strong>NOTE:</strong>
-		  <em>
-		    We have previously proposed <a href="http://www.kecl.ntt.co.jp/people/kameoka.hirokazu/Demos/stargan-vc/">StarGAN-VC</a> (ver1), <a href="../cyclegan-vc/index.html">CycleGAN-VC</a>, and <a href="../cyclegan-vc2/index.html">CycleGAN-VC2</a>.
-		    They are highly related to this work.
-		    Check them from the corresponding links!
-		  </em>
-		</p>
-	      </div>
-	    </div>
-	  </div>
-	</div>
-    -->
 	<hr>
 	
 	<div class="row" id="introduction">
@@ -139,12 +113,11 @@
 			layers of model, it is introduced to replace Batch Normalization (BN) in StarGAN-VC. Lastly, Residual Network (ResNet) is applied 
 			to establish the mapping of different layers between the encoder and decoder of generator aiming to retain more 
 			semantic features when converting speech, and to reduce the difﬁculty of training.
-	      <!-- To advance the research on <strong>multi-domain non-parallel VC</strong>, we rethink conditional methods in <a href="http://www.kecl.ntt.co.jp/people/kameoka.hirokazu/Demos/stargan-vc/">StarGAN-VC</a> <a href="#1">[1]</a> and propose an improved variant called <strong id="pinkstrong">StarGAN-VC2</strong>. Particularly, we rethink conditional methods in two aspects: training objectives and network architectures. For the former, we propose a <strong>source-and-target conditional adversarial loss</strong> that allows all source domain data to be convertible to the target domain data. For the latter, we introduce a <strong> modulation-based conditional method</strong> that can transform the modulation of the acoustic feature in a domain-specific manner. -->
 	    </p>
 
 	    <figure class="figure">				
 		<center>
-		  <a name="fig1"><img src="images/G-5-15.jpg" class="figure-img" width="100%" alt="network"></a>	
+		  <a name="fig1"><img src="images/G-D-C-5-7.jpg" class="figure-img" width="100%" alt="network"></a>	
 		</center>
 	      </figure>
 	  </div>
@@ -154,14 +127,14 @@
 	
 	<div class="row" id="results">
 	  <div class="col-md-12">
-	    <h2>Converted speech samples</h2>	    
-	    <h5>Task and dataset</h5>
+	    <h3>Converted speech samples</h3>
+		<strong>Task and dataset</strong>
 	    <ul>
 	      <li>We evaluated our method on the <strong>non-parallel multi-speaker VC</strong> task.</li>
-	      <li>We used <a href="https://datashare.is.ed.ac.uk/handle/10283/3061">the Voice Conversion Challenge 2018 (VCC 2018) dataset</a> <a href="#2">[2]</a> in which we selected a subset of speakers as covering all inter- and intra-gender conversions: VCC2SF3, VCC2SF4, VCC2SM3, VCC2SM4, VCC2TF1, VCC2TF2, VCC2TM1, and VCC2TF2.</li>
-	      <li>Each speaker has 81 sentences (<strong>about 5 minutes</strong>) for training. This is <strong>relatively little</strong> for VC.</li>
-	      <li>Our goal is to learn <strong>4 x 4 = 16</strong> different source-and-target mappings <strong>only using a single model</strong>.</li>	      
-	      <li>Note that we did <strong>not use any extra data, module, or time alignment procedures</strong> for training.</li>
+		  <li>We used <a href="https://datashare.is.ed.ac.uk/handle/10283/3061">the Voice Conversion Challenge 2018 (VCC 2018) dataset</a> <a href="#1">[1]</a> in which we selected a subset of speakers as covering all inter- and intra-gender conversions: VCC2SF3, VCC2SF4, VCC2SM3, VCC2SM4, VCC2TF1, VCC2TF2, VCC2TM1, and VCC2TF2. Converted speech by PSR-StarGAN-VC can be abtained in <a href="https://github.com/xudongxiang/PSR-StarGAN-VC/demo"> the demo of PSR-StarGAN-VC</a><a href="#1">[2]</a>.</li> 
+		  <li><span style="color:red">In order to compare converted speech by PSR-StarGAN-VC with official demo of StarGAN-VC, we need to select same speaker as they select. Experiment are carried on four speakers (SF1, SF2, SM1, and SM2) following the two systems again.</span></li>
+
+
 	    </ul>
         <!--
 	    <h5>Results</h5>
@@ -171,782 +144,31 @@
 	      <li><a href="#exp2">2. One-to-multi VC using StarGAN-VC2</a></li>
 	      <li><a href="#exp3">3. Voice morphing using StarGAN-VC2</a></li>
 	    </ul>
-
+		-->
 	    <p>
-	      <strong>NOTE:</strong> Recommended browsers are Apple Safari, Google Chrome, or Mozilla Firefox.
+	      <strong>NOTE:</strong> Recommended browsers are Apple Safari, Google Chrome, Mozilla Firefox, or Microsoft Edge.
 	    </p>
-	    -->
+	    
 	    <hr>
-
-	    <h4><a name="exp1">1. The demo of PSR-StarGAN-VC</a></h4>
+		<h4><a name="exp1">1. Comparison between StarGAN-VC <a href="#1">[1]</a> and PSR-StarGAN-VC</a></h4>
 	    <h5>Notation</h5>
 	    <ul>
 	      <li><strong>Source</strong> is the <em>source</em> speech samples.</li>
 	      <li><strong>Target</strong> is the <em>target</em> speech samples. They are provided as references. Note that we did <strong>not use these data during training</strong>.</li>
-		  <li><strong>PSR-StarGAN-VC</strong> is the <em>converted</em> speech samples.</li>
-		  <!--
-		  <li><strong><a href="http://www.kecl.ntt.co.jp/people/kameoka.hirokazu/Demos/stargan-vc/">StarGAN-VC</a></strong> is the <em>converted</em> speech samples, in which the conventional <a href="http://www.kecl.ntt.co.jp/people/kameoka.hirokazu/Demos/stargan-vc/"><strong>StarGAN-VC</strong></a> <a href="#6">[6]</a> was used to convert <strong>MCEPs.</strong></li>
-	      <li><strong id="pinkstrong">StarGAN-VC2</strong> is the <em>converted</em> speech samples, in which the proposed <strong id="pinkstrong">StarGAN-VC2</strong> was used to convert <strong>MCEPs.</strong></li>
-	      <li><strong id="pinkstrong">StarGAN-VC2++</strong> is the <em>converted</em> speech samples, in which the proposed <strong id="pinkstrong">StarGAN-VC2</strong> was used to convert <strong>all acoustic features</strong> (namely, MCEPs, band APs, continuous log F<sub>0</sub>, and voice/unvoice indicator).</li>
-		  -->
-		</ul>
+	      <li><strong><a href="http://www.kecl.ntt.co.jp/people/kameoka.hirokazu/Demos/stargan-vc/">StarGAN-VC</a></strong> is the <em>converted</em> speech samples, in which the conventional <a href="http://www.kecl.ntt.co.jp/people/kameoka.hirokazu/Demos/stargan-vc/"><strong>StarGAN-VC</strong></a> <a href="#6">[6]</a> was used to convert <strong>MCEPs.</strong></li>
+		  <li><strong id="pinkstrong">PSR-StarGAN-VC</strong> is the <em>converted</em> speech samples, in which the proposed <strong id="pinkstrong">PSR-StarGAN-VC</strong> was used to convert <strong>MCEPs.</strong></li>
+		  </ul>
 	    
-	    <p class="lead">Female (VCC2SF3) &rarr; Female (VCC2TF1)</p>
+	    <p class="lead">Male (VCC2SM1) &rarr; Female (VCC2SF1)</p>
 	    <div>
 	      <table class="table">
 		<thead>
 		  <tr>
 		    <th></th>
 		    <th>Source</th>
-			<th>Target</th>
-			<th>PSR-StarGAN-VC</th>
-			<!--
+		    <th>Target</th>
 		    <th><a href="http://www.kecl.ntt.co.jp/people/kameoka.hirokazu/Demos/stargan-vc/">StarGAN-VC<br><small>(Conventional)</small></a></th>
-		    <th id="strong">StarGAN-VC2<br><small>(Proposed)</small></th>
-			<th id="strong">StarGAN-VC2++<br><small>(Proposed)</small></th>
-			-->
-		  </tr>
-		</thead>
-		<tbody>
-		  <tr>
-		    <th scope="row">Sample 1 30001</th>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SM1_30004.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SF1_30004.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="demo/SF3-TF1/SF3-TF1_30001.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-			</td>
-			<!--
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SF1_VCC2SM1_STARGANVC2_30004.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SF1_VCC2SM1_STARGANVC2PP_30004.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-			</td>
-			-->
-		  </tr>
-
-		  <tr>
-		    <th scope="row">Sample 2 30002</th>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SM1_30005.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SF1_30005.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="demo/SF3-TF1/SF3-TF1_30002.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-			</td>
-			<!--
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SF1_VCC2SM1_STARGANVC2_30005.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SF1_VCC2SM1_STARGANVC2PP_30005.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-			</td>
-			-->
-		  </tr>
-
-		  <tr>
-		    <th scope="row">Sample 3 30003</th>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SM1_30016.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SF1_30016.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="demo/SF3-TF1/SF3-TF1_30003.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-			</td>
-			<!--
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SF1_VCC2SM1_STARGANVC2_30016.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SF1_VCC2SM1_STARGANVC2PP_30016.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-			</td>
-			-->
-		  </tr>
-		</tbody>
-	      </table>
-	    </div>
-
-	    <p class="lead">Female (VCC2SF3) &rarr; Female (VCC2TF2)</p>
-	    <div>
-	      <table class="table">
-		<thead>
-		  <tr>
-		    <th></th>
-		    <th>Source</th>
-			<th>Target</th>
-			<th>PSR-StarGAN-VC</th>
-		  </tr>
-		</thead>
-		<tbody>
-		  <tr>
-		    <th scope="row">Sample 1 30001</th>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SM1_30004.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SF1_30004.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="demo/SF3-TF2/SF3-TF2_30001.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-			</td>
-		  </tr>
-
-		  <tr>
-		    <th scope="row">Sample 2 30002</th>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SM1_30005.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SF1_30005.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="demo/SF3-TF2/SF3-TF2_30002.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-			</td>
-		  </tr>
-
-		  <tr>
-		    <th scope="row">Sample 3 30003</th>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SM1_30016.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SF1_30016.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="demo/SF3-TF2/SF3-TF2_30003.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-			</td>
-		  </tr>
-		</tbody>
-	      </table>
-		</div>
-		
-		<p class="lead">Female (VCC2SF3) &rarr; Male (VCC2TM1)</p>
-	    <div>
-	      <table class="table">
-		<thead>
-		  <tr>
-		    <th></th>
-		    <th>Source</th>
-			<th>Target</th>
-			<th>PSR-StarGAN-VC</th>
-		  </tr>
-		</thead>
-		<tbody>
-		  <tr>
-		    <th scope="row">Sample 1 30001</th>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SM1_30004.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SF1_30004.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="demo/SF3-TM1/SF3-TM1_30001.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-			</td>
-		  </tr>
-
-		  <tr>
-		    <th scope="row">Sample 2 30002</th>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SM1_30005.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SF1_30005.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="demo/SF3-TM1/SF3-TM1_30002.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-			</td>
-		  </tr>
-
-		  <tr>
-		    <th scope="row">Sample 3 30003</th>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SM1_30016.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SF1_30016.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="demo/SF3-TM1/SF3-TM1_30003.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-			</td>
-		  </tr>
-		</tbody>
-	      </table>
-		</div>
-		
-		<p class="lead">Female (VCC2SF3) &rarr; Male (VCC2TM2)</p>
-	    <div>
-	      <table class="table">
-		<thead>
-		  <tr>
-		    <th></th>
-		    <th>Source</th>
-			<th>Target</th>
-			<th>PSR-StarGAN-VC</th>
-		  </tr>
-		</thead>
-		<tbody>
-		  <tr>
-		    <th scope="row">Sample 1 30001</th>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SM1_30004.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SF1_30004.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="demo/SF3-TM2/SF3-TM2_30001.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-			</td>
-		  </tr>
-
-		  <tr>
-		    <th scope="row">Sample 2 30002</th>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SM1_30005.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SF1_30005.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="demo/SF3-TM2/SF3-TM2_30002.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-			</td>
-		  </tr>
-
-		  <tr>
-		    <th scope="row">Sample 3 30003</th>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SM1_30016.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SF1_30016.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="demo/SF3-TM2/SF3-TM2_30003.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-			</td>
-		  </tr>
-		</tbody>
-	      </table>
-	    </div>
-		
-		<p class="lead">Male (VCC2SM3) &rarr; Female (VCC2TF1)</p>
-	    <div>
-	      <table class="table">
-		<thead>
-		  <tr>
-		    <th></th>
-		    <th>Source</th>
-			<th>Target</th>
-			<th>PSR-StarGAN-VC</th>
-			<!--
-		    <th><a href="http://www.kecl.ntt.co.jp/people/kameoka.hirokazu/Demos/stargan-vc/">StarGAN-VC<br><small>(Conventional)</small></a></th>
-		    <th id="strong">StarGAN-VC2<br><small>(Proposed)</small></th>
-			<th id="strong">StarGAN-VC2++<br><small>(Proposed)</small></th>
-			-->
-		  </tr>
-		</thead>
-		<tbody>
-		  <tr>
-		    <th scope="row">Sample 1 30001</th>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SM1_30004.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SF1_30004.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="demo/SM3-TF1/SM3-TF1_30001.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-			</td>
-		  </tr>
-
-		  <tr>
-		    <th scope="row">Sample 2 30002</th>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SM1_30005.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SF1_30005.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="demo/SM3-TF1/SM3-TF1_30002.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-			</td>
-		  </tr>
-
-		  <tr>
-		    <th scope="row">Sample 3 30003</th>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SM1_30016.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SF1_30016.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="demo/SM3-TF1/SM3-TF1_30003.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-			</td>
-		  </tr>
-		</tbody>
-	      </table>
-	    </div>
-
-	    <p class="lead">Male (VCC2SM3) &rarr; Female (VCC2TF2)</p>
-	    <div>
-	      <table class="table">
-		<thead>
-		  <tr>
-		    <th></th>
-		    <th>Source</th>
-			<th>Target</th>
-			<th>PSR-StarGAN-VC</th>
-		  </tr>
-		</thead>
-		<tbody>
-		  <tr>
-		    <th scope="row">Sample 1 30001</th>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SM1_30004.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SF1_30004.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="demo/SM3-TF2/SM3-TF2_30001.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-			</td>
-		  </tr>
-
-		  <tr>
-		    <th scope="row">Sample 2 30002</th>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SM1_30005.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SF1_30005.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="demo/SM3-TF2/SM3-TF2_30002.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-			</td>
-		  </tr>
-
-		  <tr>
-		    <th scope="row">Sample 3 30003</th>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SM1_30016.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SF1_30016.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="demo/SM3-TF2/SM3-TF2_30003.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-			</td>
-		  </tr>
-		</tbody>
-	      </table>
-		</div>
-		
-		<p class="lead">Male (VCC2SM3) &rarr; Male (VCC2TM1)</p>
-	    <div>
-	      <table class="table">
-		<thead>
-		  <tr>
-		    <th></th>
-		    <th>Source</th>
-			<th>Target</th>
-			<th>PSR-StarGAN-VC</th>
-		  </tr>
-		</thead>
-		<tbody>
-		  <tr>
-		    <th scope="row">Sample 1 30001</th>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SM1_30004.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SF1_30004.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="demo/SM3-TM1/SM3-TM1_30001.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-			</td>
-		  </tr>
-
-		  <tr>
-		    <th scope="row">Sample 2 30002</th>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SM1_30005.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SF1_30005.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="demo/SM3-TM1/SM3-TM1_30002.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-			</td>
-		  </tr>
-
-		  <tr>
-		    <th scope="row">Sample 3 30003</th>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SM1_30016.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SF1_30016.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="demo/SM3-TM1/SM3-TM1_30003.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-			</td>
-		  </tr>
-		</tbody>
-	      </table>
-		</div>
-		
-		<p class="lead">Male (VCC2SM3) &rarr; Male (VCC2TM2)</p>
-	    <div>
-	      <table class="table">
-		<thead>
-		  <tr>
-		    <th></th>
-		    <th>Source</th>
-			<th>Target</th>
-			<th>PSR-StarGAN-VC</th>
-		  </tr>
-		</thead>
-		<tbody>
-		  <tr>
-		    <th scope="row">Sample 1 30001</th>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SM1_30004.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SF1_30004.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="demo/SM3-TM2/SM3-TM2_30001.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-			</td>
-		  </tr>
-
-		  <tr>
-		    <th scope="row">Sample 2 30002</th>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SM1_30005.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SF1_30005.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="demo/SM3-TM2/SM3-TM2_30002.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-			</td>
-		  </tr>
-
-		  <tr>
-		    <th scope="row">Sample 3 30003</th>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SM1_30016.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SF1_30016.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="demo/SM3-TM2/SM3-TM2_30003.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-			</td>
-		  </tr>
-		</tbody>
-	      </table>
-	    </div>
-        
-
-
-	    <hr>
-
-	    <h4><a name="exp2">2</a>. One-to-multi VC using StarGAN-VC2</h4>
-	    <p class="lead">Male (VCC2SM1) &rarr; Male (VCC2SM2), Female (VCC2SF1), or Female (VCC2SF2)</p>	    	    
-	    <div>
-	      <table class="table">
-		<thead>
-		  <tr>
-		    <th>Real speech</th>
-		    <th>VCC2SM1</th>
-		    <th>VCC2SM2</th>
-		    <th>VCC2SF1</th>
-		    <th>VCC2SF2</th>
-		  </tr>
-		</thead>
-		<tbody>
-		  <tr>
-		    <th scope="row">Reference</th>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SM1_30001.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SM2_30001.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SF1_30001.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SF2_30001.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		  </tr>
-		</tbody>
-	      </table>
-
-	      <table class="table">
-		<thead>
-		  <tr>
-		    <th>Converted speech</th>
-		    <th>VCC2SM1<br><small>(Source)</small></th>
-		    <th>VCC2SM2<br><small><strong id="pinkstrong">(Converted)</strong></small></th>
-		    <th>VCC2SF1<br><small><strong id="pinkstrong">(Converted)</strong></small></th>
-		    <th>VCC2SF2<br><small><strong id="pinkstrong">(Converted)</strong></small></th>
+		    <th id="strong">PSR-StarGAN-VC<br><small>(Proposed)</small></th>
 		  </tr>
 		</thead>
 		<tbody>
@@ -960,19 +182,19 @@
 		    </td>
 		    <td>
 		      <audio controls>
-			<source src="audios/VCC2SM2_VCC2SM1_STARGANVC2_30004.wav" type="audio/wav" />
+			<source src="audios/VCC2SF1_30004.wav" type="audio/wav" />
 			Your browser does not support the audio element.
 		      </audio>
 		    </td>
 		    <td>
 		      <audio controls>
-			<source src="audios/VCC2SF1_VCC2SM1_STARGANVC2_30004.wav" type="audio/wav" />
+			<source src="audios/VCC2SF1_VCC2SM1_STARGANVC_30004.wav" type="audio/wav" />
 			Your browser does not support the audio element.
 		      </audio>
 		    </td>
 		    <td>
 		      <audio controls>
-			<source src="audios/VCC2SF2_VCC2SM1_STARGANVC2_30004.wav" type="audio/wav" />
+			<source src="demo-four/SM1-SF1-Sample1.wav" type="audio/wav" />
 			Your browser does not support the audio element.
 		      </audio>
 		    </td>
@@ -988,19 +210,19 @@
 		    </td>
 		    <td>
 		      <audio controls>
-			<source src="audios/VCC2SM2_VCC2SM1_STARGANVC2_30005.wav" type="audio/wav" />
+			<source src="audios/VCC2SF1_30005.wav" type="audio/wav" />
 			Your browser does not support the audio element.
 		      </audio>
 		    </td>
 		    <td>
 		      <audio controls>
-			<source src="audios/VCC2SF1_VCC2SM1_STARGANVC2_30005.wav" type="audio/wav" />
+			<source src="audios/VCC2SF1_VCC2SM1_STARGANVC_30005.wav" type="audio/wav" />
 			Your browser does not support the audio element.
 		      </audio>
 		    </td>
 		    <td>
 		      <audio controls>
-			<source src="audios/VCC2SF2_VCC2SM1_STARGANVC2_30005.wav" type="audio/wav" />
+			<source src="demo-four/SM1-SF1-Sample2.wav" type="audio/wav" />
 			Your browser does not support the audio element.
 		      </audio>
 		    </td>
@@ -1016,19 +238,19 @@
 		    </td>
 		    <td>
 		      <audio controls>
-			<source src="audios/VCC2SM2_VCC2SM1_STARGANVC2_30016.wav" type="audio/wav" />
+			<source src="audios/VCC2SF1_30016.wav" type="audio/wav" />
 			Your browser does not support the audio element.
 		      </audio>
 		    </td>
 		    <td>
 		      <audio controls>
-			<source src="audios/VCC2SF1_VCC2SM1_STARGANVC2_30016.wav" type="audio/wav" />
+			<source src="audios/VCC2SF1_VCC2SM1_STARGANVC_30016.wav" type="audio/wav" />
 			Your browser does not support the audio element.
 		      </audio>
 		    </td>
 		    <td>
 		      <audio controls>
-			<source src="audios/VCC2SF2_VCC2SM1_STARGANVC2_30016.wav" type="audio/wav" />
+			<source src="demo-four/SM1-SF1-Sample3.wav" type="audio/wav" />
 			Your browser does not support the audio element.
 		      </audio>
 		    </td>
@@ -1037,57 +259,216 @@
 	      </table>
 	    </div>
 
-	    <p class="lead">Female (VCC2SF1) &rarr; Female (VCC2SF2), Male (VCC2SM1), or Male (VCC2SM2)</p>
+	    <p class="lead">Female (VCC2SF2) &rarr; Male (VCC2SM2)</p>
 	    <div>
 	      <table class="table">
 		<thead>
 		  <tr>
-		    <th>Real speech</th>
-		    <th>VCC2SF1</th>
-		    <th>VCC2SF2</th>
-		    <th>VCC2SM1</th>
-		    <th>VCC2SM2</th>
+		    <th></th>
+		    <th>Source</th>
+		    <th>Target</th>
+		    <th><a href="http://www.kecl.ntt.co.jp/people/kameoka.hirokazu/Demos/stargan-vc/">StarGAN-VC<br><small>(Conventional)</small></a></th>
+		    <th id="strong">PSR-StarGAN-VC<br><small>(Proposed)</small></th>
 		  </tr>
 		</thead>
 		<tbody>
 		  <tr>
-		    <th scope="row">Reference</th>
+		    <th scope="row">Sample 1</th>
 		    <td>
 		      <audio controls>
-			<source src="audios/VCC2SF1_30001.wav" type="audio/wav" />
+			<source src="audios/VCC2SF2_30009.wav" type="audio/wav" />
 			Your browser does not support the audio element.
 		      </audio>
 		    </td>
 		    <td>
 		      <audio controls>
-			<source src="audios/VCC2SF2_30001.wav" type="audio/wav" />
+			<source src="audios/VCC2SM2_30009.wav" type="audio/wav" />
 			Your browser does not support the audio element.
 		      </audio>
 		    </td>
 		    <td>
 		      <audio controls>
-			<source src="audios/VCC2SM1_30001.wav" type="audio/wav" />
+			<source src="audios/VCC2SM2_VCC2SF2_STARGANVC_30009.wav" type="audio/wav" />
 			Your browser does not support the audio element.
 		      </audio>
 		    </td>
 		    <td>
 		      <audio controls>
-			<source src="audios/VCC2SM2_30001.wav" type="audio/wav" />
+			<source src="demo-four/SF2-SM2-Sample1.wav" type="audio/wav" />
+			Your browser does not support the audio element.
+		      </audio>
+		    </td>
+		  </tr>
+
+		  <tr>
+		    <th scope="row">Sample 2</th>
+		    <td>
+		      <audio controls>
+			<source src="audios/VCC2SF2_30005.wav" type="audio/wav" />
+			Your browser does not support the audio element.
+		      </audio>
+		    </td>
+		    <td>
+		      <audio controls>
+			<source src="audios/VCC2SM2_30005.wav" type="audio/wav" />
+			Your browser does not support the audio element.
+		      </audio>
+		    </td>
+		    <td>
+		      <audio controls>
+			<source src="audios/VCC2SM2_VCC2SF2_STARGANVC_30005.wav" type="audio/wav" />
+			Your browser does not support the audio element.
+		      </audio>
+		    </td>
+		    <td>
+		      <audio controls>
+			<source src="demo-four/SF2-SM2-Sample2.wav" type="audio/wav" />
+			Your browser does not support the audio element.
+		      </audio>
+		    </td>
+		  </tr>
+
+		  <tr>
+		    <th scope="row">Sample 3</th>
+		    <td>
+		      <audio controls>
+			<source src="audios/VCC2SF2_30011.wav" type="audio/wav" />
+			Your browser does not support the audio element.
+		      </audio>
+		    </td>
+		    <td>
+		      <audio controls>
+			<source src="audios/VCC2SM2_30011.wav" type="audio/wav" />
+			Your browser does not support the audio element.
+		      </audio>
+		    </td>
+		    <td>
+		      <audio controls>
+			<source src="audios/VCC2SM2_VCC2SF2_STARGANVC_30011.wav" type="audio/wav" />
+			Your browser does not support the audio element.
+		      </audio>
+		    </td>
+		    <td>
+		      <audio controls>
+			<source src="demo-four/SF2-SM2-Sample3.wav" type="audio/wav" />
 			Your browser does not support the audio element.
 		      </audio>
 		    </td>
 		  </tr>
 		</tbody>
 	      </table>
+	    </div>
 
+	    <p class="lead">Male (VCC2SM2) &rarr; Male (VCC2SM1)</p>
+	    <div>
 	      <table class="table">
 		<thead>
 		  <tr>
-		    <th>Converted speech</th>
-		    <th>VCC2SF1<br><small>(Source)</small></th>
-		    <th>VCC2SF2<br><small><strong id="pinkstrong">(Converted)</strong></small></th>
-		    <th>VCC2SM1<br><small><strong id="pinkstrong">(Converted)</strong></small></th>
-		    <th>VCC2SM2<br><small><strong id="pinkstrong">(Converted)</strong></small></th>
+		    <th></th>
+		    <th>Source</th>
+		    <th>Target</th>
+		    <th><a href="http://www.kecl.ntt.co.jp/people/kameoka.hirokazu/Demos/stargan-vc/">StarGAN-VC<br><small>(Conventional)</small></a></th>
+		    <th id="strong">PSR-StarGAN-VC<br><small>(Proposed)</small></th>
+		  </tr>
+		</thead>
+		<tbody>
+		  <tr>
+		    <th scope="row">Sample 1</th>
+		    <td>
+		      <audio controls>
+			<source src="audios/VCC2SM2_30005.wav" type="audio/wav" />
+			Your browser does not support the audio element.
+		      </audio>
+		    </td>
+		    <td>
+		      <audio controls>
+			<source src="audios/VCC2SM1_30005.wav" type="audio/wav" />
+			Your browser does not support the audio element.
+		      </audio>
+		    </td>
+		    <td>
+		      <audio controls>
+			<source src="audios/VCC2SM1_VCC2SM2_STARGANVC_30005.wav" type="audio/wav" />
+			Your browser does not support the audio element.
+		      </audio>
+		    </td>
+		    <td>
+		      <audio controls>
+			<source src="demo-four/SM2-SM1-Sample1.wav" type="audio/wav" />
+			Your browser does not support the audio element.
+		      </audio>
+		    </td>
+		  </tr>
+
+		  <tr>
+		    <th scope="row">Sample 2</th>
+		    <td>
+		      <audio controls>
+			<source src="audios/VCC2SM2_30009.wav" type="audio/wav" />
+			Your browser does not support the audio element.
+		      </audio>
+		    </td>
+		    <td>
+		      <audio controls>
+			<source src="audios/VCC2SM1_30009.wav" type="audio/wav" />
+			Your browser does not support the audio element.
+		      </audio>
+		    </td>
+		    <td>
+		      <audio controls>
+			<source src="audios/VCC2SM1_VCC2SM2_STARGANVC_30009.wav" type="audio/wav" />
+			Your browser does not support the audio element.
+		      </audio>
+		    </td>
+		    <td>
+		      <audio controls>
+			<source src="demo-four/SM2-SM1-Sample2.wav" type="audio/wav" />
+			Your browser does not support the audio element.
+		      </audio>
+		    </td>
+		  </tr>
+
+		  <tr>
+		    <th scope="row">Sample 3</th>
+		    <td>
+		      <audio controls>
+			<source src="audios/VCC2SM2_30012.wav" type="audio/wav" />
+			Your browser does not support the audio element.
+		      </audio>
+		    </td>
+		    <td>
+		      <audio controls>
+			<source src="audios/VCC2SM1_30012.wav" type="audio/wav" />
+			Your browser does not support the audio element.
+		      </audio>
+		    </td>
+		    <td>
+		      <audio controls>
+			<source src="audios/VCC2SM1_VCC2SM2_STARGANVC_30012.wav" type="audio/wav" />
+			Your browser does not support the audio element.
+		      </audio>
+		    </td>
+		    <td>
+		      <audio controls>
+			<source src="demo-four/SM2-SM1-Sample3.wav" type="audio/wav" />
+			Your browser does not support the audio element.
+		      </audio>
+		    </td>
+		  </tr>
+		</tbody>
+	      </table>
+	    </div>
+
+	    <p class="lead">Female (VCC2SF1) &rarr; Female (VCC2SF2)</p>
+	    <div>
+	      <table class="table">
+		<thead>
+		  <tr>
+		    <th></th>
+		    <th>Source</th>
+		    <th>Target</th>
+		    <th><a href="http://www.kecl.ntt.co.jp/people/kameoka.hirokazu/Demos/stargan-vc/">StarGAN-VC<br><small>(Conventional)</small></a></th>
+		    <th id="strong">PSR-StarGAN-VC<br><small>(Proposed)</small></th>
 		  </tr>
 		</thead>
 		<tbody>
@@ -1101,19 +482,19 @@
 		    </td>
 		    <td>
 		      <audio controls>
-			<source src="audios/VCC2SF2_VCC2SF1_STARGANVC2_30011.wav" type="audio/wav" />
+			<source src="audios/VCC2SF2_30011.wav" type="audio/wav" />
 			Your browser does not support the audio element.
 		      </audio>
 		    </td>
 		    <td>
 		      <audio controls>
-			<source src="audios/VCC2SM1_VCC2SF1_STARGANVC2_30011.wav" type="audio/wav" />
+			<source src="audios/VCC2SF2_VCC2SF1_STARGANVC_30011.wav" type="audio/wav" />
 			Your browser does not support the audio element.
 		      </audio>
 		    </td>
 		    <td>
 		      <audio controls>
-			<source src="audios/VCC2SM2_VCC2SF1_STARGANVC2_30011.wav" type="audio/wav" />
+			<source src="demo-four/SF1-SF2-Sample1.wav" type="audio/wav" />
 			Your browser does not support the audio element.
 		      </audio>
 		    </td>
@@ -1129,19 +510,19 @@
 		    </td>
 		    <td>
 		      <audio controls>
-			<source src="audios/VCC2SF2_VCC2SF1_STARGANVC2_30012.wav" type="audio/wav" />
+			<source src="audios/VCC2SF2_30012.wav" type="audio/wav" />
 			Your browser does not support the audio element.
 		      </audio>
 		    </td>
 		    <td>
 		      <audio controls>
-			<source src="audios/VCC2SM1_VCC2SF1_STARGANVC2_30012.wav" type="audio/wav" />
+			<source src="audios/VCC2SF2_VCC2SF1_STARGANVC_30012.wav" type="audio/wav" />
 			Your browser does not support the audio element.
 		      </audio>
 		    </td>
 		    <td>
 		      <audio controls>
-			<source src="audios/VCC2SM2_VCC2SF1_STARGANVC2_30012.wav" type="audio/wav" />
+			<source src="demo-four/SF1-SF2-Sample2.wav" type="audio/wav" />
 			Your browser does not support the audio element.
 		      </audio>
 		    </td>
@@ -1157,152 +538,207 @@
 		    </td>
 		    <td>
 		      <audio controls>
-			<source src="audios/VCC2SF2_VCC2SF1_STARGANVC2_30013.wav" type="audio/wav" />
+			<source src="audios/VCC2SF2_30013.wav" type="audio/wav" />
 			Your browser does not support the audio element.
 		      </audio>
 		    </td>
 		    <td>
 		      <audio controls>
-			<source src="audios/VCC2SM1_VCC2SF1_STARGANVC2_30013.wav" type="audio/wav" />
+			<source src="audios/VCC2SF2_VCC2SF1_STARGANVC_30013.wav" type="audio/wav" />
 			Your browser does not support the audio element.
 		      </audio>
 		    </td>
 		    <td>
 		      <audio controls>
-			<source src="audios/VCC2SM2_VCC2SF1_STARGANVC2_30013.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		  </tr>
-		</tbody>
-	      </table>
-	    </div>	    	  
-
-	    <h4><a name="exp3">3</a>. Voice morphing using StarGAN-VC2</h4>
-	    <p>
-	      We morph voices between two speakers using StarGAN-VC2.<br>
-	      <strong>Our high-quality multi-domain VC framework makes it possible to conduct natural voice morphing</strong>.
-	    </p>
-	    
-	    <div>
-	      <table class="table">
-		<thead>
-		  <tr>
-		    <th></th>
-		    <th>Source</th>
-		    <th>Mixture rate<br>3:1</th>
-		    <th>Mixture rate<br>1:1</th>
-		    <th>Mixture rate<br>1:3</th>
-		    <th>Target</th>
-		  </tr>
-		</thead>
-		<tbody>
-		  <tr>
-		    <th scope="row">VCC2SF1<br>&rarr;VCC2SF2</th>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SF1_30012.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>		    
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SF2_25_VCC2SF1_75_STARGANVC2_30012.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SF2_50_VCC2SF1_50_STARGANVC2_30012.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SF2_75_VCC2SF1_25_STARGANVC2_30012.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SF2_VCC2SF1_STARGANVC2_30012.wav" type="audio/wav" />
+			<source src="demo-four/SF1-SF2-Sample3.wav" type="audio/wav" />
 			Your browser does not support the audio element.
 		      </audio>
 		    </td>
 		  </tr>
-		  
-		  <tr>
-		    <th scope="row">VCC2SF1<br>&rarr;VCC2SM1</th>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SF1_30012.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SM1_25_VCC2SF1_75_STARGANVC2_30012.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SM1_50_VCC2SF1_50_STARGANVC2_30012.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SM1_75_VCC2SF1_25_STARGANVC2_30012.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SM1_VCC2SF1_STARGANVC2_30012.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		  </tr>
-
-		  <tr>
-		    <th scope="row">VCC2SF1<br>&rarr;VCC2SM2</th>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SF1_30012.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SM2_25_VCC2SF1_75_STARGANVC2_30012.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SM2_50_VCC2SF1_50_STARGANVC2_30012.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SM2_75_VCC2SF1_25_STARGANVC2_30012.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		    <td>
-		      <audio controls>
-			<source src="audios/VCC2SM2_VCC2SF1_STARGANVC2_30012.wav" type="audio/wav" />
-			Your browser does not support the audio element.
-		      </audio>
-		    </td>
-		  </tr>
-
 		</tbody>
 	      </table>
 	    </div>
-	    
+		<strong>NOTE:</strong> If you can't load these wavs, please use VPN or download and compare proposed method with StarGAN-VC.
+	    <hr>
+	   
+        <!--
+	    <h3><a name="exp2"></a>Compare with official demo of StarGAN-VC or StarGAN-VC2 in four speakers(VCC2SF1, VCC2SF2, VCC2SM1, VCC2SM2). </h3>
+		<ul>
+			<li><span style="color:black">In order to show that advantages of PSR-StarGAN-VC are not highlighted by deliberately lowering the performance of StarGAN-VC, we hope to accept public review by directly comparing our method with public demo of StarGAN-VC and StarGAN-VC2, which can get in StarGAN-VC2. The order of our converted speech has been adjusted to be the same as theirs. You can open two windows, and directly compare our demo with theirs. Source speech and target speech can be found in StarGAN-VC and StargGAN-VC2</span></li>
+			<li><strong>PSR-StarGAN-VC</strong> is the <em>converted</em> speech samples that use the same dataset and select same speaker to train.</li>
+		  </ul>
+		  <p class="lead">Male (VCC2SM1) &rarr; Female (VCC2SF1)</p>
+		  <div>
+			<table class="table">
+		  <thead>
+			<tr>
+			  <th></th>
+			  <th>PSR-StarGAN-VC</th>
+			</tr>
+		  </thead>
+		  <tbody>
+			<tr>
+			  <th scope="row">Sample 1 </th>
+			  <td>
+				<audio controls>
+			  <source src="demo-four/SM1-SF1-Sample1.wav" type="audio/wav" />
+			  Your browser does not support the audio element.
+				</audio>
+			  </td>
+			</tr>
+  
+			<tr>
+			  <th scope="row">Sample 2 </th>
+			  <td>
+				<audio controls>
+			  <source src="demo-four/SM1-SF1-Sample2.wav" type="audio/wav" />
+			  Your browser does not support the audio element.
+				</audio>
+			  </td>
+			</tr>
+  
+			<tr>
+			  <th scope="row">Sample 3 </th>
+			  <td>
+				<audio controls>
+			  <source src="demo-four/SM1-SF1-Sample3.wav" type="audio/wav" />
+			  Your browser does not support the audio element.
+				</audio>
+			  </td>
+			</tr>
+		  </tbody>
+			</table>
+		  </div>
+		  <p class="lead">Female (VCC2SF2) &rarr; Male (VCC2SM2)</p>
+		  <div>
+			<table class="table">
+		  <thead>
+			<tr>
+			  <th></th>
+			  <th>PSR-StarGAN-VC</th>
+			</tr>
+		  </thead>
+		  <tbody>
+			<tr>
+			  <th scope="row">Sample 1</th>
+			  <td>
+				<audio controls>
+			  <source src="demo-four/SF2-SM2-Sample1.wav" type="audio/wav" />
+			  Your browser does not support the audio element.
+				</audio>
+			  </td>
+			</tr>
+  
+			<tr>
+			  <th scope="row">Sample 2</th>
+			  <td>
+				<audio controls>
+			  <source src="demo-four/SF2-SM2-Sample2.wav" type="audio/wav" />
+			  Your browser does not support the audio element.
+				</audio>
+			  </td>
+			</tr>
+  
+			<tr>
+			  <th scope="row">Sample 3</th>
+			  <td>
+				<audio controls>
+			  <source src="demo-four/SF2-SM2-Sample3.wav" type="audio/wav" />
+			  Your browser does not support the audio element.
+				</audio>
+			  </td>
+			</tr>
+		  </tbody>
+			</table>
+		  </div>
+		  <p class="lead"><a>Male (VCC2SM2) &rarr; Male (VCC2SM1)</a></p>
+		  <div>
+			<table class="table">
+		  <thead>
+			<tr>
+			  <th></th>
+			  <th>PSR-StarGAN-VC</th>
+			</tr>
+		  </thead>
+		  <tbody>
+			<tr>
+			  <th scope="row">Sample 1</th>
+			  <td>
+				<audio controls>
+			  <source src="demo-four/SM2-SM1-Sample1.wav" type="audio/wav" />
+			  Your browser does not support the audio element.
+				</audio>
+			  </td>
+			</tr>
+  
+			<tr>
+			  <th scope="row">Sample 2</th>
+			  <td>
+				<audio controls>
+			  <source src="demo-four/SM2-SM1-Sample2.wav" type="audio/wav" />
+			  Your browser does not support the audio element.
+				</audio>
+			  </td>
+			</tr>
+  
+			<tr>
+			  <th scope="row">Sample 3</th>
+			  <td>
+				<audio controls>
+			  <source src="demo-four/SM2-SM1-Sample3.wav" type="audio/wav" />
+			  Your browser does not support the audio element.
+				</audio>
+			  </td>
+			</tr>
+		  </tbody>
+			</table>
+		  </div>
+		  <p class="lead">Female (VCC2SF1) &rarr; Female (VCC2SF2)</p>
+		  <div>
+			<table class="table">
+		  <thead>
+			<tr>
+			  <th></th>
+			  <th>PSR-StarGAN-VC</th>
+			</tr>
+		  </thead>
+		  <tbody>
+			<tr>
+			  <th scope="row">Sample 1</th>
+			  <td>
+				<audio controls>
+			  <source src="demo-four/SF1-SF2-Sample1.wav" type="audio/wav" />
+			  Your browser does not support the audio element.
+				</audio>
+			  </td>
+			</tr>
+  
+			<tr>
+			  <th scope="row">Sample 2</th>
+			  <td>
+				<audio controls>
+			  <source src="demo-four/SF1-SF2-Sample2.wav" type="audio/wav" />
+			  Your browser does not support the audio element.
+				</audio>
+			  </td>
+			</tr>
+  
+			<tr>
+			  <th scope="row">Sample 3</th>
+			  <td>
+				<audio controls>
+			  <source src="demo-four/SF1-SF2-Sample3.wav" type="audio/wav" />
+			  Your browser does not support the audio element.
+				</audio>
+			  </td>
+			</tr>
+		  </tbody>
+			</table>
+		  </div>
+		  <p>
+			<strong>NOTE:</strong> If you click on the button of play, please select VPN or download 
+		  </p>
+		-->
 	  </div>
 	</div>
 
@@ -1326,94 +762,25 @@
 	    </ul>
 	    <p class="lead">Non-parallel multi-domain VC</p>
 	    <ul>
-	      <li><a href="http://www.kecl.ntt.co.jp/people/kameoka.hirokazu/Demos/stargan-vc/">StarGAN-VC</a> <a href="#1">[1]</a></li>
-	      <li><a href="http://www.kecl.ntt.co.jp/people/kameoka.hirokazu/Demos/acvae-vc/">ACVAE-VC</a> <a href="#6">[6]</a></li>
-	      <li><a href="https://jeremycchsu.github.io/vc-vawgan/">VAW-GAN-VC</a> <a href="#7">[7]</a></li>
+		  <li><a href="http://www.kecl.ntt.co.jp/people/kameoka.hirokazu/Demos/stargan-vc/">StarGAN-VC</a> <a href="#6">[6]</a></li>
+		  <li><a href="http://www.kecl.ntt.co.jp/people/kaneko.takuhiro/projects/stargan-vc2/">StarGAN-VC2</a> <a href="#7">[7]</a></li>
 	    </ul>
 	  </div>
 	</div>
 
 	<hr>
-
-	<div class="row" id="references">
-	  <div class="col-md-12">
-	    <h2>References</h2>
-	    <div>
-	      <p>
-		<a name="1" class="text-primary">[1]</a>
-		H. Kameoka, T. Kaneko, K. Tanaka, and N. Hojo.
-		<strong>StarGAN-VC: Non-parallel Many-to-Many Voice Conversion with Star Generative Adversarial Networks</strong>.
-		<em>arXiv:1806.02169</em>, June 2018 (<em>SLT</em>, 2018).
-		[<a href="https://arxiv.org/abs/1806.02169">Paper</a>]
-		[<a href="http://www.kecl.ntt.co.jp/people/kameoka.hirokazu/Demos/stargan-vc/">Project</a>]
-	      </p>
-	      <p>
-		<a name="2" class="text-primary">[2]</a>
-		J. Lorenzo-Trueba, J. Yamagishi, T. Toda, D. Saito, F. Villavicencio, T. Kinnunen, and Z. Ling.
-		<strong>The Voice Conversion Challenge 2018: Promoting Development of Parallel and Nonparallel Methods</strong>.
-		<em>Speaker Odyssey</em>, 2018.
-		[<a href="https://arxiv.org/abs/1804.04262">Paper</a>]
-		[<a href="https://datashare.is.ed.ac.uk/handle/10283/3061">Dataset</a>]
-	      </p>
-	      <p>
-		<a name="3" class="text-primary">[3]</a>
-		K. Kobayashi and T. Toda.
-		<strong>sprocket: Open-Source Voice Conversion Software</strong>.
-		<em>Speaker Odyssey</em>, 2018.
-		[<a href="https://nuss.nagoya-u.ac.jp/s/h8YKnq6qxjjxtU3#pdfviewer">Paper</a>]
-		[<a href="https://github.com/k2kobayashi/sprocket">Project</a>]
-		[<a href="https://nuss.nagoya-u.ac.jp/index.php/s/Cs0YbTCw85p3QDK">Samples (zip)</a>]
-	      </p>
-	      <p>
-		<a name="4" class="text-primary">[4]</a>
-		T. Kaneko and H. Kameoka.
-		<strong>Parallel-Data-Free Voice Conversion Using Cycle-Consistent Adversarial Networks</strong>.     
-		<em>arXiv:1711.11293</em>, Nov. 2017 (<em>EUSIPCO</em>, 2018).
-		[<a href="https://arxiv.org/abs/1711.11293">Paper</a>]
-		[<a href="../cyclegan-vc/index.html">Project</a>]
-	      </p>
-	      <p>
-		<a name="5" class="text-primary">[5]</a>
-		T. Kaneko, H. Kameoka, K. Tanaka, and N. Hojo.
-		<strong>CycleGAN-VC2: Improved CycleGAN-based Non-parallel Voice Conversion</strong>.     
-		<em>ICASSP</em>, 2019.
-		[<a href="https://arxiv.org/abs/1904.04631">Paper</a>]
-		[<a href="../cyclegan-vc2/index.html">Project</a>]
-	      </p>
-	      <p>
-		<a name="6" class="text-primary">[6]</a>
-		H. Kameoka, T. Kaneko, K. Tanaka, and N. Hojo.
-		<strong>ACVAE-VC: Non-parallel Many-to-Many Voice Conversion with Auxiliary Classifier Variational Autoencoder</strong>.
-		<em>arXiv:1808.05092</em>, Aug. 2018.
-		(<em>IEEE/ACM Transactions on Audio, Speech, and Language Processing</em>, May 2019).
-		[<a href="https://arxiv.org/abs/1808.05092">Paper</a>]
-		[<a href="http://www.kecl.ntt.co.jp/people/kameoka.hirokazu/Demos/acvae-vc/">Project</a>]
-	      </p>
-	      <p>
-		<a name="7" class="text-primary">[7]</a>
-		C.-C. Hsu, H.-T. Hwang, Y.-C. Wu, Y. Tsao, and H.-M. Wang.
-		<strong>Voice Conversion from Unaligned Corpora using Variational Autoencoding Wasserstein Generative Adversarial Networks</strong>.
-		<em>Interspeech</em>, 2017.
-		[<a href="https://arxiv.org/abs/1704.00849">Paper</a>]
-		[<a href="https://jeremycchsu.github.io/vc-vawgan/">Project</a>]
-	      </p>
-	    </div>
-	  </div>
-	</div>
-	
       </div>
     </main>
 
     <footer class="footer">
       <div class="container">
 	<p class="text-center"><small>
-	    <strong>StarGAN-VC2:</strong><br>
-	    <strong>Rethinking Conditional Methods for StarGAN-Based Voice Conversion</strong><br>
-	    <a href="../../index.html">Takuhiro Kaneko</a> | kaneko.takuhiro at lab.ntt.co.jp</small></p>
+	    <strong>Non-parallel Many-to-many Voice Conversion with PSR-StarGAN</strong><br>
+	    <a>Yanping Li  Dongxiang Xu  Yang Zhang  Yang Wang  Binbin Chen</a> | NJUPT  JIT  vivo</small></p>
       </div>
     </footer>
     
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
     <script src="../../js/bootstrap.min.js"></script>
   </body>
 </html>
